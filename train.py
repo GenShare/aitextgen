@@ -1,6 +1,6 @@
 from aitextgen.aitextgen import aitextgen
 
-ai = aitextgen(tf_gpt2="355M", to_gpu=True)
+ai = aitextgen(tf_gpt2="774M", to_gpu=True)
 file_name = "input.csv"
 
 ai.train(file_name,
