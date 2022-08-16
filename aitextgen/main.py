@@ -12,7 +12,7 @@ ai = aitextgen(model_folder="trained_model", to_gpu=True)
 ## Worth looking into -- You can pass a batch_size to generate multiple samples in parallel, giving a massive speedup (in Colaboratory, set a maximum of 50 for batch_size to avoid going OOM).
 
 texts = []
-## Receive n parameters
+## Request for n generated texts
 for i in range(0,n):
   texts.append(ai.generate_one(prompt={prompt},temperature={temp},max_length={max},min_length={min}))
   ## Probably want to implement a check here so ensure each element in array is unique
