@@ -141,6 +141,12 @@ class ATGProgressBar(ProgressBarBase):
     def on_train_end(self, trainer, pl_module):
         self.main_progress_bar.close()
         self.unfreeze_layers(pl_module)
+        
+    def get_metrics(self, trainer, pl_module):
+        # don't show the version number
+        items = super().get_metrics(trainer, pl_module)
+        items.pop("v_num", None)
+        return items
 
     def get_metrics(self, trainer, pl_module):
         # don't show the version number
